@@ -12,7 +12,8 @@
     "stopwatch"
   ],
   "repository": {
-    "url": "https://github.com/sanelib/stopwatch"
+    "type": "git",
+    "url": "https://github.com/sanelib/stopwatch.git"
   },
   "author": "atlib",
   "license": "MIT",
