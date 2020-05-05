@@ -1,0 +1,21 @@
+{
+ "compilerOptions": {
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "declaration": true,
+    "removeComments": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "types": ["node", "jest"],
+    "target": "ESNext",
+    "rootDirs": ["./", "./src"],
+    "typeRoots": ["./types", "./@types", "node_modules/@types"],
+    "allowJs": false,
+    "outDir": "lib",
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "**/__tests__/*", "coverage"],
+  "ts-node": {
+    "compiler": "typescript",
+  }
+}
