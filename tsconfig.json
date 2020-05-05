@@ -6,7 +6,9 @@
     "removeComments": true,
     "declarationMap": true,
     "sourceMap": true,
+    "esModuleInterop": true,
     "module": "commonjs",
+    "lib": ["ESNext"],
     "types": ["node", "jest"],
     "target": "ESNext",
     "rootDirs": ["./", "./src"],
@@ -15,7 +17,7 @@
     "outDir": "lib",
   },
   "include": ["src"],
-  "exclude": ["node_modules", "**/__tests__/*", "coverage"],
+  "exclude": ["node_modules", "**/__tests__/*", "coverage", "lib"],
   "ts-node": {
     "compiler": "typescript",
   }

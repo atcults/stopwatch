@@ -1,44 +1,29 @@
+const NS_PER_SEC = 1e9;
+
 class StopWatch {
-    startTime: number;
-    stopTime: number;
+    startTime: [number, number];
+    stopTime: [number, number];
     running: boolean;
-    performance: boolean;
-
-    constructor(performance?: boolean) {
-        this.startTime = 0;
-        this.stopTime = 0;
+    
+    constructor() {
+        this.startTime = [0,0];
+        this.stopTime = [0,0];
         this.running = false;
-        this.performance = performance === false ? false : !!window.performance;
-    }
-
-    currentTime() {
-        return this.performance ? window.performance.now() : new Date().getTime();
     }
 
     start() {
-        this.startTime = this.currentTime();
+        this.startTime = process.hrtime();
         this.running = true;
     }
 
     stop() {
-        this.stopTime = this.currentTime();
+        this.stopTime = process.hrtime(this.startTime);
         this.running = false;
-    }
-
-    getElapsedMilliseconds() {
-        if (this.running) {
-            this.stopTime = this.currentTime();
-        }
-        return this.stopTime - this.startTime;
-    }
-
-    getElapsedSeconds() {
-        return this.getElapsedMilliseconds() / 1000;
     }
 
     printElapsed(name?: string) {
         var currentName = name || 'Elapsed:';
-        console.log(currentName, '[' + this.getElapsedMilliseconds() + 'ms]', '[' + this.getElapsedSeconds() + 's]');
+        console.log(currentName, `${this.stopTime[0] * NS_PER_SEC + this.stopTime[1]} nanoseconds`);
     }
 }
 
