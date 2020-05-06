@@ -2,7 +2,8 @@
 
 module.exports = {
   collectCoverage: true,
-  collectCoverageFrom: ["src/**/*.ts", "src/**/*.js"],
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)x?$',
+  collectCoverageFrom: ["src/**/*.ts"],
   coverageThreshold: {
     global: {
       branches: 100,
@@ -12,6 +13,5 @@ module.exports = {
     },
   },
   testEnvironment: "node",
-  preset: "ts-jest",
-  globals: { "window": {} }
+  preset: "ts-jest"
 };

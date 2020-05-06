@@ -1,4 +1,4 @@
-import { StopWatch } from '../index';
+import { StopWatch } from '../src/main';
 
 test("Stopwatch", () => {
     
@@ -12,4 +12,3 @@ test("Stopwatch", () => {
 
     expect("hello").toBe("hello");
 });
-

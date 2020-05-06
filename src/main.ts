@@ -1,6 +1,6 @@
 const NS_PER_SEC = 1e9;
 
-class StopWatch {
+export class StopWatch {
     startTime: [number, number];
     stopTime: [number, number];
     running: boolean;
@@ -26,20 +26,3 @@ class StopWatch {
         console.log(currentName, `${this.stopTime[0] * NS_PER_SEC + this.stopTime[1]} nanoseconds`);
     }
 }
-
-export {StopWatch}
-
-
-/*
-var stopwatch = new StopWatch();
-stopwatch.start();
-
-for (var index = 0; index < 100; index++) {
-  stopwatch.printElapsed('Instance[' + index + ']');
-}
-
-stopwatch.stop();
-
-stopwatch.printElapsed();
-
-*/
